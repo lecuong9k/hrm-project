@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DM Entertainment</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <%- include('leftMenu') %>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            <%- include('topbar') %>
+            <div class="container-fluid">
+                <!-- Content Row -->
+
+                <div class="row">
+                    <!-- Area Chart -->
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Profile Overview</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="row">
+                                <div class="card-body">
+                                    <div class="container rounded bg-white mt-5 mb-5">
+                                        <div class="row">
+                                            <div class="col-md-3 border-right">
+                                                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="<%= req.user.link_img%>"><span class="font-weight-bold"><%= req.user.username %></span><span class="text-black-50"><%= req.user.email_company %></span><span> </span></div>
+                                            </div>
+                                            <div class="col-md-5 border-right">
+                                                <form action="/profileUser" method="post" id ='profileUser'>
+                                                    <div class="p-3 py-5">
+                                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                                            <h4 class="text-right">Profile Settings</h4>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="full name" value="<%= req.user.name %>" name="name"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="text" class="form-control" placeholder="dd/mm/yyyy" value="<%= req.user.date_of_birth %>" name="dateOfBirth"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="address" value="<%= req.user.address %>" name="address"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="phone number" value="<%= req.user.phone %>" name="phoneNumber"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">Email Company</label><input type="text" class="form-control" placeholder="ex: cuong.lt@dm-entertainment.com" value="<%= req.user.email_company %>" name="emailCompany"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">Email Individual</label><input type="text" class="form-control" placeholder="email individual" value="<%= req.user.email_individual %>" name="emailIndividual"></div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-md-12"><label class="labels">Skype</label><input type="text" class="form-control" placeholder="skype" value="<%= req.user.skype %>" name="skype"></div>
+                                                        </div>
+
+                                                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="p-3 py-5">
+                                                    <div class="d-flex justify-content-between align-items-center experience"><span>Native village</span></div><br>
+                                                    <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" value="<%= req.user.city %>" name="city"></div>
+                                                    <div class="col-md-12"><label class="labels">District </label><input type="text" class="form-control"value="<%= req.user.district %>" name="district"></div>
+                                                    <div class="col-md-12"><label class="labels">Ward / Commune</label><input type="text" class="form-control" value="<%= req.user.ward %>" name="ward"></div>
+                                                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control"  value="<%= req.user.details %>" name="additionDetail"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+        $("#profileUser").validate({
+            rules: {
+                ho: "required",
+                ten: "required",
+                diachi: {
+                    required: true,
+                    minlength: 2
+                }
+            },
+            messages: {
+                ho: "Vui lòng nhập họ",
+                ten: "Vui lòng nhập tên",
+                diachi: {
+                    required: "Vui lòng nhập địa chỉ",
+                    minlength: "Địa chỉ ngắn vậy, chém gió ah?"
+                }
+            }
+        });
+    });
+</script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

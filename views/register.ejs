@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Register - DM Services</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-primary">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header justify-content-center"><h3 class="font-weight-light my-4">Đăng ký tài khoản</h3></div>
+                            <div class="card-body">
+                                <form action="api" method="post">
+                                    <input type="hidden" name="action" value="register">
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputFirstName">Họ tên</label><input class="form-control py-4" id="inputFirstName" name="name" type="text" placeholder="" required/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="phone">Số điện thoại</label><input class="form-control py-4" id="phone" type="phone" name="phone" placeholder="" required/></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="" required/></div>
+                                    <div class="form-group"><label class="small mb-1" for="inputUsername">Tên tài khoản</label><input class="form-control py-4" id="inputUsername" name="username" type="text"  placeholder="" required/></div>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Mật khẩu</label><input class="form-control py-4" id="inputPassword" type="password" name="password"  placeholder="" required/></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Xác nhận mật khẩu</label><input class="form-control py-4" id="inputConfirmPassword" name="confirm_password" type="password" placeholder="" required/></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="small"><a href="/login">Bạn đã có tài khoản? Tới đăng nhập</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include('info') %>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
