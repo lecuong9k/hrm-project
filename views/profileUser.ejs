@@ -60,44 +60,46 @@
                                                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="<%= req.user.link_img%>"><span class="font-weight-bold"><%= req.user.username %></span><span class="text-black-50"><%= req.user.email_company %></span><span> </span></div>
                                             </div>
                                             <div class="col-md-5 border-right">
-                                                <form action="/profileUser" method="post" id ='profileUser'>
+<!--                                                <form action="/profileUser" method="post" id ='profileUser'>-->
                                                     <div class="p-3 py-5">
                                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                                             <h4 class="text-right">Profile Settings</h4>
                                                         </div>
                                                         <div class="row mt-2">
-                                                            <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="full name" value="<%= req.user.name %>" name="name"></div>
+                                                            <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="full name" value="<%= req.user.name %>" name="name" id="name"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="text" class="form-control" placeholder="dd/mm/yyyy" value="<%= req.user.date_of_birth %>" name="dateOfBirth"></div>
+                                                            <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="text" class="form-control" placeholder="dd/mm/yyyy" value="<%= moment%>" name="dateOfBirth" id="dateOfBirth"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="address" value="<%= req.user.address %>" name="address"></div>
+                                                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="address" value="<%= req.user.address %>" name="address" id="address"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="phone number" value="<%= req.user.phone %>" name="phoneNumber"></div>
+                                                            <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="phone number" value="<%= req.user.phone %>" name="phoneNumber" id="phoneNumber"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">Email Company</label><input type="text" class="form-control" placeholder="ex: cuong.lt@dm-entertainment.com" value="<%= req.user.email_company %>" name="emailCompany"></div>
+                                                            <div class="col-md-12"><label class="labels">Email Company</label><input type="text" class="form-control" placeholder="ex: cuong.lt@dm-entertainment.com" value="<%= req.user.email_company %>" name="emailCompany" id="emailCompany"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">Email Individual</label><input type="text" class="form-control" placeholder="email individual" value="<%= req.user.email_individual %>" name="emailIndividual"></div>
+                                                            <div class="col-md-12"><label class="labels">Email Individual</label><input type="text" class="form-control" placeholder="email individual" value="<%= req.user.email_individual %>" name="emailIndividual" id="emailIndividual"></div>
                                                         </div>
                                                         <div class="row mt-3">
-                                                            <div class="col-md-12"><label class="labels">Skype</label><input type="text" class="form-control" placeholder="skype" value="<%= req.user.skype %>" name="skype"></div>
+                                                            <div class="col-md-12"><label class="labels">Skype</label><input type="text" class="form-control" placeholder="skype" value="<%= req.user.skype %>" name="skype" id="skype"></div>
                                                         </div>
 
-                                                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="updateProfile(<%= req.user.id %>)">Save Profile</button></div>
                                                     </div>
-                                                </form>
+<!--                                                </form>-->
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="p-3 py-5">
                                                     <div class="d-flex justify-content-between align-items-center experience"><span>Native village</span></div><br>
-                                                    <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" value="<%= req.user.city %>" name="city"></div>
-                                                    <div class="col-md-12"><label class="labels">District </label><input type="text" class="form-control"value="<%= req.user.district %>" name="district"></div>
-                                                    <div class="col-md-12"><label class="labels">Ward / Commune</label><input type="text" class="form-control" value="<%= req.user.ward %>" name="ward"></div>
-                                                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control"  value="<%= req.user.details %>" name="additionDetail"></div>
+                                                    <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" value="<%= req.user.city %>" name="city" id="city"></div>
+                                                    <div class="col-md-12"><label class="labels">District </label><input type="text" class="form-control"value="<%= req.user.district %>" name="district" id="district"></div>
+                                                    <div class="col-md-12"><label class="labels">Ward / Commune</label><input type="text" class="form-control" value="<%= req.user.ward %>" name="ward" id="ward"></div>
+                                                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control"  value="<%= req.user.details %>" name="additionDetail" id="additionDetail" ></div><br>
+
+                                                    <div class="col-md-12"><label class="labels">Department</label><input type="text" class="form-control" value="<%= department %>" disabled></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,12 +110,8 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
         <!-- End of Main Content -->
 
@@ -158,28 +156,49 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
+    function updateProfile(id) {
+        let name = $("#name").val()
+        let dateOfBirth = $("#dateOfBirth").val()
+        let address = $("#address").val()
+        let phoneNumber = $("#phoneNumber").val()
+        let emailCompany = $("#emailCompany").val()
+        let emailIndividual = $("#emailIndividual").val()
+        let skype = $("#skype").val()
+        let city = $("#city").val()
+        let district = $("#district").val()
+        let ward = $("#ward").val()
+        let additionDetail = $("#additionDetail").val()
 
-        //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
-        $("#profileUser").validate({
-            rules: {
-                ho: "required",
-                ten: "required",
-                diachi: {
-                    required: true,
-                    minlength: 2
-                }
+        $.ajax({
+            url : "/api",
+            method: "POST",
+            data : {
+                action : "update-profile",
+                id : id,
+                name : name,
+                dateOfBirth : dateOfBirth,
+                address : address,
+                phoneNumber : phoneNumber,
+                emailCompany : emailCompany,
+                emailIndividual : emailIndividual,
+                skype : skype,
+                city : city,
+                district : district,
+                ward : ward,
+                additionDetail : additionDetail,
             },
-            messages: {
-                ho: "Vui lòng nhập họ",
-                ten: "Vui lòng nhập tên",
-                diachi: {
-                    required: "Vui lòng nhập địa chỉ",
-                    minlength: "Địa chỉ ngắn vậy, chém gió ah?"
+            success : function (res) {
+                if(res.err) {
+                    alert(res.err)
+                    return
                 }
+                // $("#btn-update-" + id).html("Updated")
+                // $("#btn-update-" + id).prop('disabled', true);
+                // $("#row-" + id).attr('class', 'table-success');
+                alert("Update Profile Success")
             }
-        });
-    });
+        })
+    }
 </script>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>

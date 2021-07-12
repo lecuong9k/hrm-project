@@ -16,7 +16,7 @@ var api = require('./routes/api');
 var dashboard = require('./routes/dashboard');
 var logout = require('./routes/logout')
 var profileUser = require('./routes/profileUser')
-
+var employees = require('./routes/employees')
 
 var adminAPI = require('./routes/admin/api')
 
@@ -43,6 +43,7 @@ app.use('/dashboard', dashboard);
 app.use('/logout', logout);
 app.use('/profile', profileUser)
 app.use('/admin/api', adminAPI);
+app.use('/employees', employees)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
